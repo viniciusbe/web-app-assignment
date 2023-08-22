@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta</title>
+</head>
+<body style="font-family: Inter, sans-serif; margin: 0;" bgcolor="#222831" text="#eeeeee">
+    <header style="padding: 1.5rem 3rem;">
+        <h1 style="margin: 0;"><b>Criar conta</b></h1>
+        <h2 style="margin: 0;"><i>O que você usa?</i></h2>
+    </header>
+    <main>
+        <form action="POST">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" value="" placeholder="Digite seu nome">
+            <br><br>
+            <label for="age">Idade:</label>
+            <input type="number" id="age">
+            <br><br>
+            <label for="so">Qual sistema operacional usa:</label>
+            <br>
+            <input type="checkbox" id="linux" name="Linux" value="linux">
+            <label for="linux">Linux</label><br>
+
+            <input type="checkbox" id="windows" name="windows" value="windows">
+            <label for="windows">Windows</label><br>
+
+            <input type="checkbox" id="macOS" name="macOS" value="macos">
+            <label for="macOS">MacOS</label><br>
+
+            <input type="checkbox" id="other" name="other" value="other">
+            <label for="other">Outro</label>
+            <!-- password,text,hidden,checkbox, radio, button, reset, submit -->
+            <br><br>
+            <label for="password">Digite uma senha:</label>
+            <input type="password">
+            <br>
+            <br>
+            <input type="reset" value="Limpar"/>
+            <input type="submit" value="Salvar"/>
+        </form>
+    </main>
+</body>
+</html>
