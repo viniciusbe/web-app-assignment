@@ -10,22 +10,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Nunito:ital,wght@0,400;0,500;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./global.styles.css">
+    <link rel="stylesheet" href="./home.styles.css">
 </head>
-<body style="font-family: Inter, sans-serif; margin: 0;" bgcolor="#222831" text="#eeeeee">
-    <header style="padding: 1.5rem 3rem;">
-        <h1 style="margin: 0; color: #00adb5;">Tecnologia</h1>
-        <h2 style="margin: 0; font-weight: normal; font-family: Nunito, sans-serif;color: #00adb5cc;"><i>Só o que você precisa saber</i></h2>
-    </header>
-    <hr style="border-top: 0; border-color: #eeeeee66;">
+<style>
+    .main h1 {
+        color: #eeeeee;
+        font-size: 28px;
+    }
 
-    <main style="display: flex; justify-content: center; align-items: center;">
+    #img {
+        width: 750px;
+        object-fit: cover;
+        height: 300px;
+    }
+
+    .main h2 {
+        margin-top: 1rem;
+    }
+
+    .main dd,ol,ul {
+        margin-left: 1rem;
+    }
+</style>
+<body>
+    <header class="header">
+        <h1>Tecnologia</h1>
+        <h2><i>Só o que você precisa saber</i></h2>
+    </header>
+
+    <main class="main">
         <article style="max-width: 800px;">
-            <h1>Sistema operacional</h2>
-            <br>
+            <h1>Sistemas operacionais</h2>
             <figure style="margin: 0;">
-                <img src="https://blog.winco.com.br/wp-content/uploads/2018/02/sistemas-operacionais.jpg" alt="Sistemas operacionais" width="750">
+                <img id="img" src="https://blog.winco.com.br/wp-content/uploads/2018/02/sistemas-operacionais.jpg" alt="Sistemas operacionais">
             </figure>
-            <h2>O que é?</h2>
+            <h2>O que são?</h2>
             <p>
                 Como dito por Linus Torvald no documentário 
                 <a href="https://www.youtube.com/watch?v=Z3f-M43DiD4"target="_blank">Revolution OS</a>:
@@ -56,7 +76,7 @@
             </p>
 
             <h2>Os mais usados no mundo</h2>
-            <p>Uma pesquisa feita StatCounter com dados refentes a julho de 2022 mostra quais são os sistema mais utilizados:</p>
+            <p>Uma pesquisa feita pela StatCounter com dados refentes a julho de 2022 mostra quais são os sistema mais utilizados no mundo:</p>
             <ol>
                 <li>Android: 44,66%</li>
                 <li>Windows: 27,92%</li>
@@ -66,10 +86,10 @@
                 <li>Linux: 1,02%</li>
             </ol>
 
-            <h2>Distribuiçoes Linux</h2>
+            <h2>Distribuições Linux</h2>
             <p>
-                Linux nasceu com o intuito de ser livre e open source, ou seja, para que qualquer um pudesse acessar seu código, 
-                alterá-lo e depois distribui-lo novamente, devido à isso possui inúmeras distribuições. Entre elas temos:
+                O Linux nasceu com o intuito de ser livre e open source, ou seja, para que qualquer um pudesse acessar seu código, 
+                alterá-lo e depois distribuí-lo novamente, devido à isso possui inúmeras distribuições. Entre elas temos:
             </p>
             <ul>
                 <li>Linux Mint</li>

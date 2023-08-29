@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  background-color: #222831;
+  font-family: Inter, sans-serif;
+  color: #eeeeee99;
+}
+
+a {
+  color: #00adb5;
+}
+
+.header {
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid #eeeeee66;
+}
+
+.header h1 {
+  color: #00adb5;
+}
+
+.header h2 {
+  font-weight: normal;
+  font-family: Nunito, sans-serif;
+  color: #00adb5cc;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.main h2 {
+  color: #00adb5;
+}
