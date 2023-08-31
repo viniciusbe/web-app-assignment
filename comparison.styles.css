@@ -1,0 +1,35 @@
+.main article {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 750px;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.icons svg {
+    width: 50px;
+    height: 50px;
+}
+
+.table {
+    border-collapse: collapse;
+}
+
+.table td,
+.table th {
+    padding: 5px 10px;
+}
+
+.table th {
+    color: #eee;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

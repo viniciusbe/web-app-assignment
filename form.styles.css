@@ -1,7 +1,37 @@
 .form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
+    width: 500px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+input:focus {
+    border: 1px solid #00adb5;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field_row {
+    display: flex;
+    gap: 8px;
+}
+
+.field_row .field {
+    flex: 1;
+}
+
+.checkbox_container div > label, .radio_container div > label {
+    margin-left: 5px;
 }
 
 .buttons_container {
@@ -14,7 +44,7 @@
     height: 30px;
     padding: 0 1rem;
     font-weight: bold;
-    border-radius: 14px;
+    border-radius: 5px;
     border: none;
     background-color: #00adb5;
     color: #eee;
