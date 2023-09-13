@@ -69,6 +69,15 @@
 
 </script>
 
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+        gap: 8px;
+    }
+</style>
+
 <body>
     <h1>Javascript</h1>
 
@@ -78,8 +87,12 @@
         <input type=text class="inputs">
         <input type=text class="inputs">
 
-        Maiusculo<input type=checkbox name="upperCaseCheckbox" onclick="toUpperCase()">
-        Minusculo<input type=checkbox name="lowerCaseCheckbox" onclick="toLowerCase()">
+        <div>
+            Maiusculo<input type=checkbox name="upperCaseCheckbox" onclick="toUpperCase()">
+        </div>
+        <div>
+            Minusculo<input type=checkbox name="lowerCaseCheckbox" onclick="toLowerCase()">
+        </div>
     </form>
 
     <h2>Exercício 2</h2>
