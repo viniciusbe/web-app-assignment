@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<script>
+    // Exercicio 1
+    function toUpperCase() {
+        document.toggleUpperLowerCase.lowerCaseCheckbox.checked = false;
+        inputs = document.getElementsByClassName("inputs")
+
+        for (const input of inputs) {
+            input.value = input.value.toUpperCase()
+        }
+    }
+
+    function toLowerCase() {
+        document.toggleUpperLowerCase.upperCaseCheckbox.checked = false;
+        inputs = document.getElementsByClassName("inputs")
+
+        for (const input of inputs) {
+            input.value = input.value.toLowerCase()
+        }
+    }
+
+    // Exercicio 2
+
+    function handleSubmit() {
+        inputs = document.getElementsByClassName("requiredFields")
+
+        for (const input of inputs) {
+            if (!input.value) {
+                alert("Preencha todos os campos obrigatórios")
+                return
+            }
+        }
+
+        alert("Sucesso")
+    }
+
+    // Exercicio 3
+
+    function greetingPrompt() {
+        const name = prompt("Informe seu nome", "")
+        const currentTime = new Date()
+        const localeDateString = currentTime.toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "2-digit", year: "numeric" })
+
+        var greet = [
+            "Isso é hora de estar aqui?",
+            "Bom dia",
+            "Boa tarde",
+            "Boa noite"
+        ][parseInt(currentTime.getHours() / 24 * 4)];
+
+        // alert(`${greet}, ${name}, hoje é ${localeDateString}.`)
+        document.getElementById("greeting").innerHTML = `${greet}, ${name}, hoje é ${localeDateString}.`
+    }
+
+    // Exercicio 4
+
+    function counter() {
+        const count = document.getElementById("inputCount").value.length
+
+        document.getElementById("count").innerHTML = `Caracteres: ${count}`
+    }
+
+</script>
+
+<body>
+    <h1>Javascript</h1>
+
+    <h2>Exercicio 1</h2>
+    <form name="toggleUpperLowerCase">
+        <input type=text class="inputs">
+        <input type=text class="inputs">
+        <input type=text class="inputs">
+
+        Maiusculo<input type=checkbox name="upperCaseCheckbox" onclick="toUpperCase()">
+        Minusculo<input type=checkbox name="lowerCaseCheckbox" onclick="toLowerCase()">
+    </form>
+
+    <h2>Exercício 2</h2>
+    <form name="requiredForm" onsubmit="handleSubmit()">
+        <input type=text class="requiredFields">
+        <input type=text class="requiredFields">
+        <input type=text class="requiredFields">
+        <input type=text class="requiredFields">
+
+        <input type=submit value="Enviar">
+    </form>
+
+    <h2>Exercício 3</h2>
+    <button onclick="greetingPrompt()">Clique aqui</button>
+    <p id="greeting"></p>
+
+    <h2>Exercício 4</h2>
+    <input type="text" id="inputCount" onkeyup="counter()" onkeydown="counter()">
+    <p id="count">Caracteres: 0</p>
+</body>
+
+</html>
