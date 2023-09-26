@@ -21,6 +21,49 @@
     <link rel="stylesheet" href="./form.styles.css">
 </head>
 
+<script>
+    window.onload = function () {
+        addSubmitEvent()
+        focusNameInputOnLoad()
+        addNameEventChange()
+    }
+
+    function addSubmitEvent() {
+        const form = document.getElementById("form")
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            const data = new FormData(form);
+            for (const [name, value] of data) {
+                if (!value) {
+                    return alert("Preencha todos os campos")
+                }
+                if (name === "phone" && !isPhoneValid(value)) {
+                    return alert("Telefone inváliddo")
+                }
+            }
+            alert("Conta criada com sucesso!")
+        })
+    }
+
+    function focusNameInputOnLoad() {
+        document.getElementById("name").focus()
+    }
+
+    function addNameEventChange() {
+        document.getElementById("name").addEventListener("change", (e) => {
+            const name = e.target.value
+            const capitalizedNamesArray = name.split(" ").map((name) => name.charAt(0).toUpperCase() + name.slice(1))
+            e.target.value = capitalizedNamesArray.join(" ")
+        })
+    }
+
+    function isPhoneValid(phone) {
+        const phoneRegex = /^\(?[1-9]{2}\)? ?(?:[2-8]|9[0-9])[0-9]{3}\-?[0-9]{4}$/
+        return phoneRegex.test(phone)
+    }
+
+</script>
+
 <body>
     <header class="header">
         <h1>Tecnologia</h1>
@@ -34,57 +77,55 @@
             <a href="form.html">Criar conta</a>
             <a href="table.html">Comparação</a>
         </nav>
-        
+
         <div class="container">
             <article class="content">
                 <h1>Criar conta</h1>
-                <form class="form" action="POST">
+                <form id="form" class="form" action="POST">
                     <div class="field">
                         <label for="name">Nome:</label>
-                        <input type="text" id="name" placeholder="Digite seu nome" required autofocus
-                            autocomplete="off" />
+                        <input type="text" id="name" name="name" placeholder="Digite seu nome" autocomplete="off" />
                     </div>
 
 
                     <div class="field">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" placeholder="Digite seu email" required />
+                        <input type="email" name="email" placeholder="Digite seu email" />
                     </div>
 
 
                     <div class="field_row">
                         <div class="field">
                             <label for="age">Idade:</label>
-                            <input type="number" id="age" min="0" max="150" placeholder="Digite sua idade">
+                            <input type="number" name="age" placeholder="Digite sua idade">
                         </div>
 
                         <div class="field">
                             <label for="phone">Celular: </label>
-                            <input type="text" id="phone" placeholder="(99) 99999-9999" required
-                                pattern="/([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}">
+                            <input type="text" id="phone" name="phone" placeholder="(99) 99999-9999">
                         </div>
                     </div>
 
                     <div class="field checkbox_container">
-                        <label for="so">Qual sistema operacional usa:</label>
+                        <label for="os">Qual sistema operacional usa:</label>
 
                         <div>
-                            <input type="checkbox" id="linux" name="Linux" value="linux" />
+                            <input type="checkbox" id="linux" name="os" value="linux" />
                             <label for="linux">Linux</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="windows" name="windows" value="windows" />
+                            <input type="checkbox" id="windows" name="os" value="windows" />
                             <label for="windows">Windows</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="macOS" name="macOS" value="macos" />
+                            <input type="checkbox" id="macOS" name="os" value="macos" />
                             <label for="macOS">MacOS</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="other" name="other" value="other">
+                            <input type="checkbox" id="other" name="os" value="other">
                             <label for="other">Outro</label>
                         </div>
                     </div>
@@ -117,9 +158,10 @@
                         </div>
                     </div>
 
+                    <!-- TODO password confirmation -->
                     <div class="field">
                         <label for="password">Digite uma senha:</label>
-                        <input type="password" />
+                        <input type="password" name="password" />
                     </div>
 
                     <div class="buttons_container">
@@ -127,7 +169,7 @@
                         <input class="button" type="submit" value="Salvar" />
                     </div>
 
-                    <input hidden readonly value="sendNewsletter" />
+                    <input hidden readonly value="true" name="sendNewsletter" />
 
                 </form>
             </article>
