@@ -46,9 +46,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    if (count(array_filter(array($emptyErr, $phoneErr, $emailErr))) == 0) {
-        $message = "Nome: $name\nEmail: $email";
-        echo "<script>alert('$message');</script>";
+    $errs = array($emptyErr, $phoneErr, $emailErr);
+
+    if (count(array_filter($errs)) == 0) {
+        $message = "Nome: $name <br>
+                    Email: $email <br>
+                    Idade: $age <br>
+                    Telefone: $phone <br>
+                    Sistema operacional: $os <br>
+                    Onde encontrou: $from <br>
+                    Procurando emprego: $job <br>
+                    ";
+        echo $message;
+
+        $authFile = "autenticacao.txt";
+        $hashedPassword = hash('md5', $password);
+        $f = fopen($authFile, "a+");
+        fwrite($f, "$email,$hashedPassword" . PHP_EOL);
+        fclose($f);
     }
 }
 ?>
